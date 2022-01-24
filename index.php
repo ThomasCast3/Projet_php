@@ -1,8 +1,7 @@
 <?php
 //  echo "<html>";
- require_once './vendor/connectMysql.php'
+ require_once './vendor/connectMysql.php';
 ?>
-
 
 <html> 
 
@@ -22,7 +21,7 @@
       </div>
     </header>
 
-    <form action="PHP.php" method="GET">
+    <form action="PHP.php" method="POST">
       <p>Votre nom de compte : <input type="text" name="nom" /></p>
 
       <p>Votre type de compte :
@@ -42,7 +41,7 @@
         </select>
       </p>
 
-      <p><input type="submit" value="OK"></p>
+      <p><input type="submit" name="submitForm" value="OK"></p>
     </form>
 
   </body>
