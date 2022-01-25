@@ -1,10 +1,3 @@
-<?php
-//  echo "<html>";
- require_once './vendor/connectMysql.php';
- require_once './vendor/insertData.php';
-?>
-
-
 <html> 
 
   <!doctype html>
