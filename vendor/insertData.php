@@ -12,6 +12,7 @@
       $db = connectMysql();
 
       $count = $db->query('SELECT COUNT(*) FROM CompteBancaire WHERE IdUtilisateur = 3 ')->fetchColumn();
+      // $count->execute( array( 'idU' => 3 ) );
       // var_dump($count);
 
       if ($count < 11) {

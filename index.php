@@ -5,14 +5,14 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Formulaire</title>
+    <title>Little Accountant</title>
     <link rel="stylesheet" href="./style/style.css">
   </head>
 
   <body>
     <header>
       <div class="header-container">
-        <h2>Mon Compte Helper</h2>
+        <h2>Create Bank Account</h2>
       </div>
     </header>
 
