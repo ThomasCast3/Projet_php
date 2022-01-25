@@ -9,11 +9,15 @@ function connectMysql(){
         
         // Create connection
         $connect = new PDO(
-            "mysql:host=$servername;bdname = $database",
+            "mysql:host=$servername;port=3306;bdname = $database",
             $username, 
             $password,
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;", PDO::MYSQL_ATTR_DIRECT_QUERY => true));
-        echo "Base de donnes est bien connecte";
+            
+        
+        $connect->query( 'USE rttaphp_formulaire;' ); //FORCE USING DATABASE
+
+        echo "La base de donnes est bien connectée";
 
 
         return $connect;
@@ -22,6 +26,5 @@ function connectMysql(){
     }
 
 }
-connectMysql();
 
 ?>
