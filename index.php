@@ -1,11 +1,7 @@
 <?php
 //  echo "<html>";
-<<<<<<< Updated upstream
- require_once './vendor/connectMysql.php'
-=======
  require_once './vendor/connectMysql.php';
  require_once './vendor/insertData.php';
->>>>>>> Stashed changes
 ?>
 
 
@@ -27,13 +23,8 @@
       </div>
     </header>
 
-<<<<<<< Updated upstream
-    <form action="PHP.php" method="GET">
-      <p>Votre nom de compte : <input type="text" name="nom" /></p>
-=======
     <form action="./vendor/insertData.php" method="POST">
       <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
->>>>>>> Stashed changes
 
       <p>Votre type de compte :
         <select name="type_compte">
@@ -52,11 +43,7 @@
         </select>
       </p>
 
-<<<<<<< Updated upstream
-      <p><input type="submit" value="OK"></p>
-=======
       <p><input action="./vendor/insertData.php" type="submit" name="submitForm" value="OK"></p>
->>>>>>> Stashed changes
     </form>
 
   </body>
