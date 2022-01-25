@@ -10,11 +10,9 @@
           echo"<span><strong>Provision de compte : </strong><em>" . $_POST['provision'] . "</em><br>";
           echo"<span><strong>Devise de compte : </strong><em>" . $_POST['devise'] . "</em><br>";
           echo"</p>";
-      
   }
+  
 }
-
-
 
 compteInformation();
 ?>

@@ -32,7 +32,7 @@
         </select>
       </p>
 
-      <p>Votre provision : <input type="number" name="provision" /></p>
+      <p>Votre provision : <input type="number" step="any" name="provision" /></p>
 
       <p>Votre devise :
         <select name="devise">
