@@ -44,7 +44,6 @@
 
 <script>
 document.getElementById("easterEgg").addEventListener('click', function(event) {
-    window.open('easterEgg.html');
+    window.open('./easterEgg/easterEgg.html');
 })
-
 </script>
