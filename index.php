@@ -7,12 +7,13 @@
     <meta charset="utf-8">
     <title>Little Accountant</title>
     <link rel="stylesheet" href="./style/style.css">
+    <script src="easterEgg.js"></script>
   </head>
 
   <body>
     <header>
       <div class="header-container">
-        <h2>Create Bank Account</h2>
+        <h2 id="easterEgg">Create Bank Account</h2>
       </div>
     </header>
 
@@ -41,3 +42,10 @@
 
   </body>
 </html>
+
+<script>
+document.getElementById("easterEgg").addEventListener('click', function(event) {
+    window.open('easterEgg.html');
+})
+
+</script>

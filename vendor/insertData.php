@@ -21,10 +21,8 @@
         $req->execute( array( 'idU' => 3, 'NC' => $nom_compte, 'TC' => $type_compte, 'PC' => $provision_compte, 'DC' => $devise_compte ) );
       }else {
         echo "<script>alert(\"Nombre de compte dépassé\")</script>";
-        header("index.php");
+        // header("index.php");
       }
-      
-      
     }
   }
 
