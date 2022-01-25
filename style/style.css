@@ -26,3 +26,9 @@
 button {
     padding: 10px 15px;
 }
+
+
+#formulaire{
+display: none;
+visibility: hidden;
+}
