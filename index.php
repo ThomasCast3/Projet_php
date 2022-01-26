@@ -16,7 +16,7 @@
       </div>
     </header>
 
-    <div>
+    <!-- <div>
       <p>Choose an option :
         <select name="choix_option">
           <option id="addAccount">Add an account</option>
@@ -24,8 +24,9 @@
           <option id="deleteAccount">Delete an account</option>
         </select>
       </p>
-    </div>
+    </div> -->
     
+
     <!-- <div>
       <ul>
         <li>
@@ -40,12 +41,7 @@
             </li>
             <li>
               <a>
-                Edit an account
-              </a>
-            </li>
-            <li>
-              <a>
-                Delete an account
+                Edit the account
               </a>
             </li>
           </ul>
@@ -53,6 +49,32 @@
       </ul>
     </div> -->
 
+    <nav>
+      <ul class="menu">
+        <li>
+          OPTIONS
+          <ul class="sub-menu">
+            <li>
+              <a href="addAccountHTML.php">
+                ADD
+              </a>
+            </li>
+            <li>
+              <a href="editAccountHTML.php">
+                EDIT
+              </a>
+            </li>
+            <li>
+              <a href="./vendor/deleteAccount.php">
+                DELETE
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    
   </body>
 </html>
 
