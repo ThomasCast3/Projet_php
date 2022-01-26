@@ -33,7 +33,7 @@ function ListCompte( $idUtilisateur ) {
       <select id="menuDeroulan" name="type_compte">
           <?php foreach( ListCompte( 65 ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
 
-              <option value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
+              <option data-full='<?=json_encode($Compte); ?>' value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
 
           <?php endforeach; ?>  <!--  fin boucle for -->
       </select>
@@ -87,8 +87,7 @@ function ListCompte( $idUtilisateur ) {
         <p><input type="submit" name="submitForm" value="OK"></p>
       </form>
     </div>
-    
-
+  
     
   </body>
 </html>
@@ -98,13 +97,14 @@ function ListCompte( $idUtilisateur ) {
       window.open('./easterEgg/easterEgg.html');
   })
 
-
   var selectCompte = document.getElementById( 'menuDeroulan' );
 
   selectCompte.addEventListener('change',(event)=> {
     let item      = event.target;
     let data      = item.options[item.selectedIndex];
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
+
+    // console.log(fullData.Nom_Compte);
 
     var monNomCompte = fullData.Nom_Compte;
     document.getElementById('NomDeCompte').setAttribute('value',monNomCompte);
