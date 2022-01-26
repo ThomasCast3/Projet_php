@@ -17,7 +17,7 @@ function connectMysql(){
         
         $connect->query( 'USE rttaphp_formulaire;' ); //FORCE USING DATABASE
 
-        echo "La base de donnes est bien connectée <br>";
+        // echo "La base de donnes est bien connectée <br>";
 
 
         return $connect;
