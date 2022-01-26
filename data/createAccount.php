@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "../vendor/connectMysql.php";
 
@@ -39,15 +40,10 @@ if(isset($_REQUEST['btn_register'])) //button name "btn_register"
 										WHERE email=:email OR username=:uname"); // sql select query
 			
 			$select_stmt->execute(array(':email'=>$email,':uname'=>$username)); //execute query 
-			$row=$select_stmt->fetch(PDO::FETCH_ASSOC);	
 
-      if($row["username"]==$username){
-				// $errorMsg[]="Sorry username already exists";	//check condition username already exists 
-        notifE('Sorry username already exists'); 	//check condition email already exists 
-			}
-			else if($row["email"]==$email){
-        notifE('Sorry email already exists'); 	//check condition email already exists 
-			}
+      if( $select_stmt->rowCount() > 0 ) {
+        notifE('Email or username already taken');
+      }
 			else if(!isset($errorMsg)) //check no "$errorMsg" show then continue
 			{
 				$new_password = password_hash($password, PASSWORD_DEFAULT); //hash the password using password_hash()
@@ -56,9 +52,9 @@ if(isset($_REQUEST['btn_register'])) //button name "btn_register"
 																(:email,:password,:username)'); 		//sql insert query					
 				
 				if($insert_stmt->execute(array(':email'	=>$email, ':password'=>$new_password, ':username'=>$username))){
-          $_SESSION["user_login"] = $row["IdUtilisateur"];	//session name is "user_login"
+          $_SESSION["user_login"] = $db->lastInsertId();	//session name is "user_login"
           notifC('Register Successfully...');
-          header("refresh:2; welcome.php");			//refresh 2 second after redirect to "welcome.php" page
+          //header("refresh:2; welcome.php");			//refresh 2 second after redirect to "welcome.php" page
         }
 			}
 		}
