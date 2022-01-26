@@ -118,10 +118,17 @@ a:hover {
     color: white;
 }
 
-
 #notification_container .content p, .content2 p {
     margin: auto;
     margin-left: 10px;
     font-weight: 600;
     font-size: 20px;
 }
+
+#editInfoCompte {
+    display: none;
+}
+
+body.editPage #editInfoCompte {
+    display: block;
+  }

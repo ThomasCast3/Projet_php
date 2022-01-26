@@ -11,7 +11,7 @@
 
       $db = connectMysql();
 
-      $count = $db->query('SELECT COUNT(*) FROM CompteBancaire WHERE IdUtilisateur = 3 ')->fetchColumn();
+      $count = $db->query('SELECT COUNT(*) FROM CompteBancaire WHERE IdUtilisateur = 65 ')->fetchColumn();
       // $count->execute( array( 'idU' => 3 ) );
 
       // $delete = $db->query('DELETE FROM CompteBancaire WHERE IdUtilisateur = 3 ')->fetchColumn();
@@ -37,7 +37,7 @@
        }else{
           if ($count < 11) {
             $req = $db->prepare('INSERT INTO CompteBancaire ( IdUtilisateur, Nom_Compte, Type_Compte, Provision_Compte, Devise_Compte) VALUES ( :idU, :NC, :TC, :PC, :DC) ');
-            $req->execute( array( 'idU' => 3, 'NC' => $nom_compte, 'TC' => $type_compte, 'PC' => $provision_compte, 'DC' => $devise_compte ) );
+            $req->execute( array( 'idU' => 65, 'NC' => $nom_compte, 'TC' => $type_compte, 'PC' => $provision_compte, 'DC' => $devise_compte ) );
             notifC("You have successfully created an account");
           }else {
             echo "<script>

@@ -31,7 +31,7 @@ function ListCompte( $idUtilisateur ) {
 
     <p>Select a Bank Account :
       <select id="menuDeroulan" name="type_compte">
-          <?php foreach( ListCompte( 3 ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
+          <?php foreach( ListCompte( 65 ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
 
               <option value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
 
@@ -50,10 +50,8 @@ function ListCompte( $idUtilisateur ) {
                 ADD
               </a>
             </li>
-            <li>
-              <a href="./vendor/editAccountBank.php">
+            <li id="editBtn">
                 EDIT
-              </a>
             </li>
             <li>
               <a href="./vendor/deleteAccountBank.php">
@@ -65,12 +63,58 @@ function ListCompte( $idUtilisateur ) {
       </ul>
     </nav>
 
+    <div id="editInfoCompte">
+      <form method="POST">
+        <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
+
+        <p>Votre type de compte :
+          <select name="type_compte">
+            <option value="courant">Courant</option>
+            <option value="epargne">Épargne</option>
+            <option value="compte joint">Compte Joint</option>
+          </select>
+        </p>
+
+        <p>Votre provision : <input type="number" name="provision_compte" /></p>
+
+        <p>Votre devise :
+          <select name="devise_compte">
+            <option value="EUR">€ EUR</option>
+            <option value="USD">$ USD</option>
+          </select>
+        </p>
+
+        <p><input type="submit" name="submitForm" value="OK"></p>
+      </form>
+    </div>
+    
+
     
   </body>
 </html>
 
 <script>
-document.getElementById("easterEgg").addEventListener('click', function(event) {
-    window.open('./easterEgg/easterEgg.html');
-})
+  document.getElementById("easterEgg").addEventListener('click', function(event) {
+      window.open('./easterEgg/easterEgg.html');
+  })
+
+
+  var selectCompte = document.getElementById( 'menuDeroulan' );
+
+  selectCompte.addEventListener('change',(event)=> {
+    let item      = event.target;
+    let data      = item.options[item.selectedIndex];
+    let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
+
+    console.log( fullData.Nom_Compte );
+  });
+
+  let item = document.getElementById( 'editBtn' );
+
+  item.addEventListener( 'click', function() {
+      let body = document.getElementsByTagName( 'body' )[0];
+
+      body.classList.toggle( 'editPage' );
+  })
+      
 </script>
