@@ -50,7 +50,9 @@
     </nav>
 
     <div id="editInfoCompte">
-      <form method="POST">
+      <form method="POST" >
+        <input type="hidden" name="IdCompte"/>
+
         <p>Votre nom de compte : <input type="text" name="Nom_Compte" id="NomDeCompte"/></p>
 
         <p>Votre type de compte :
@@ -71,7 +73,7 @@
           </select>
         </p>
 
-        <p><input type="submit" name="submitForm" value="OK"></p>
+        <p><input type="submit" name="submitFormEdit" value="OK"></p>
       </form>
     </div>
   
