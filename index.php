@@ -38,10 +38,14 @@ function ListCompte( $idUtilisateur ) {
 
         <option value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
 
-    <?php endforeach; ?>  <!--  fin boucle for -->
+    <?php
+    endforeach; ?>  <!--  fin boucle for -->
 </select>
  </p>
+<!--<div>
+<p> <?=// js -> creer un event listener $CurrentCompte['Provision_Compte']?></p>
 
+</div>-->
 
 </div>
 
