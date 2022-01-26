@@ -43,15 +43,15 @@
 </html>
 
 <script>
-      var selectCompte = document.getElementById( 'menuDeroulan' );
+  var selectCompte = document.getElementById( 'menuDeroulan' );
 
-      selectCompte.addEventListener('change',(event)=> {
-        let item      = event.target;
-        let data      = item.options[item.selectedIndex];
-        let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
+  selectCompte.addEventListener('change',(event)=> {
+    let item      = event.target;
+    let data      = item.options[item.selectedIndex];
+    let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
-        console.log( fullData.Nom_Compte );
-        //let data = this.querySelector(':checked').getAttribute('data-full')
-        //alert( data );
-      });
-    </script>
+    console.log( fullData.Nom_Compte );
+    //let data = this.querySelector(':checked').getAttribute('data-full')
+    //alert( data );
+  });
+</script>
