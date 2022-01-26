@@ -99,7 +99,7 @@
       <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
 
       <p>Votre type de compte :
-        <select name="type_compte">
+        <select name="type_compte" selected = "epargne">
           <option value="courant">Courant</option>
           <option value="epargne">Épargne</option>
           <option value="compte joint">Compte Joint</option>

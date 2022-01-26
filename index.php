@@ -65,20 +65,21 @@ function ListCompte( $idUtilisateur ) {
 
     <div id="editInfoCompte">
       <form method="POST">
-        <p>Votre nom de compte : <input type="text" name="nom_compte" id="NomDeCompte"/></p>
+        <p>Votre nom de compte : <input type="text" name="Nom_Compte" id="NomDeCompte"/></p>
 
         <p>Votre type de compte :
-          <select name="type_compte">
+
+          <select name="Type_Compte" id="Type_Compte">
             <option value="courant">Courant</option>
             <option value="epargne">Épargne</option>
             <option value="compte joint">Compte Joint</option>
           </select>
         </p>
 
-        <p>Votre provision : <input type="number" name="provision_compte" id="ProvisionDeCompte"/></p>
+        <p>Votre provision : <input type="number" name="Provision_Compte" id="ProvisionDeCompte"/></p>
 
         <p>Votre devise :
-          <select name="devise_compte">
+          <select name="Devise_Compte">
             <option value="EUR">€ EUR</option>
             <option value="USD">$ USD</option>
           </select>
@@ -104,12 +105,33 @@ function ListCompte( $idUtilisateur ) {
     let data      = item.options[item.selectedIndex];
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
+    // Pre fill all inputs
+    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select' );
+    
+    inputs.forEach( function( item, i ) {
+      if( item.getAttribute( 'type' ) != 'submit' ) {
+        let name = item.getAttribute( 'name' );
+
+        item.value = fullData[name];
+      }
+    });
+
     // console.log(fullData.Nom_Compte);
 
-    var monNomCompte = fullData.Nom_Compte;
-    document.getElementById('NomDeCompte').setAttribute('value',monNomCompte);
-    var maProvision = fullData.Provision_Compte;
-    document.getElementById('ProvisionDeCompte').setAttribute('value',maProvision);
+    //var monNomCompte = fullData.Nom_Compte;
+    //document.getElementById('NomDeCompte').setAttribute('value',monNomCompte);
+
+    // var typeCompte = fullData.Type_Compte;
+    // document.getElementById('').setAttribute('value',typeCompte);
+
+    // var maProvision = fullData.Provision_Compte;
+    // document.getElementById('ProvisionDeCompte').setAttribute('value',maProvision);
+
+    // document.getElementById( 'type_compte' ).value = fullData.Type_Compte;
+
+    // var deviseCompte = fullData.Devise_Compte;
+    // document.getElementById('').setAttribute('value',deviseCompte);
+
   });
 
   let item = document.getElementById( 'editBtn' );
