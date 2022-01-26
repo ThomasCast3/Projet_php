@@ -40,9 +40,14 @@
                 EDIT
             </li>
             <li>
-              <a href="./vendor/deleteAccountBank.php">
+              <!-- <a href="./vendor/deleteAccountBank.php" name="submitDelete">
+                <input type="hidden" name="IdCompte"/>
                 DELETE
-              </a>
+              </a> -->
+              <form id="deleteAccountForm" method="POST" action="./vendor/deleteAccountBank.php">
+                <input type="hidden" name="IdCompte" />
+                <input type="submit" value="DELETE" />
+              </form>
             </li>
           </ul>
         </li>

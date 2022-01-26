@@ -1,5 +1,5 @@
 <?php
-require_once('./vendor/connectMysql.php');
+require_once('./connectMysql.php');
 
   if(isset($_POST["submitForm"])){
 

@@ -11,7 +11,7 @@ let data      = item.options[item.selectedIndex];
 let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
 // Pre fill all inputs
-let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select' );
+let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input' );
 
 inputs.forEach( function( item, i ) {
     if( item.getAttribute( 'type' ) != 'submit' ) {
