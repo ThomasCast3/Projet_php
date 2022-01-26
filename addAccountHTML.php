@@ -16,7 +16,7 @@
       </div>
     </header>
 
-    <form action="./vendor/insertData.php" method="POST">
+    <form action="./vendor/addAccountPHP.php" method="POST">
       <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
 
       <p>Votre type de compte :
@@ -36,7 +36,7 @@
         </select>
       </p>
 
-      <p><input action="./vendor/insertData.php" type="submit" name="submitForm" value="OK"></p>
+      <p><input action="./vendor/addAccountPHP.php" type="submit" name="submitForm" value="OK"></p>
     </form>
 
   </body>
