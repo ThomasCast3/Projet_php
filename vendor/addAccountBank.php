@@ -1,5 +1,5 @@
 <?php
-  require_once './vendor/connectMysql.php';
+  require_once './connectMysql.php';
 
   // function addAccountBank(){
     if(isset($_POST["submitForm"])){
@@ -56,10 +56,6 @@
 
 ?>
 
-
-
-
-
 <html> 
 
   <!doctype html>
@@ -68,7 +64,7 @@
   <head>
     <meta charset="utf-8">
     <title>Little Accountant</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
   </head>
 
   <body>

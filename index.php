@@ -46,17 +46,17 @@ function ListCompte( $idUtilisateur ) {
           OPTIONS
           <ul class="sub-menu">
             <li>
-              <a href="addAccountHTML.php">
+              <a href="./vendor/addAccountBank.php">
                 ADD
               </a>
             </li>
             <li>
-              <a href="editAccountHTML.php">
+              <a href="./vendor/editAccountBank.php">
                 EDIT
               </a>
             </li>
             <li>
-              <a href="./vendor/deleteAccount.php">
+              <a href="./vendor/deleteAccountBank.php">
                 DELETE
               </a>
             </li>
