@@ -22,7 +22,25 @@
     color:white;
 }
 
-form .form-horizontal{
+.header-container .container-user{
+    display: flex;
+    align-items:center;
+    font-family: 'Lobster', cursive;
+    font-size:22px;
+    color:white;
+    position: absolute;
+    right: 5%;
+}
+
+.header-container .container-user p{
+    margin: 0 20px;
+}
+
+.header-container .container-user i{
+    font-size: 42px;
+}
+
+form {
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -73,4 +91,63 @@ form p {
     margin-left: 10px;
     font-weight: 600;
     font-size: 20px;
+}
+
+/* MENU DEROULAN */
+
+nav{
+    text-align: center;
+    text-decoration: none;
+}
+.menu{
+    display: inline-block;
+}
+.menu > li{
+    float: left;
+    color: #ffffff;
+    /* width: 140px; */
+    height: 40px;
+    line-height: 40px;
+    /* background: rgba(0,0,0); */
+    cursor: pointer;
+    font-size: 17px;
+    list-style: none;
+}
+.sub-menu{
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+}
+.sub-menu li{
+    font-size: 14px;
+    background: rgba(0,0,0, 0.6);
+    padding: 8px 0;
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+    list-style: none;
+    width: 100px;
+}
+.sub-menu li:last-child{
+    border-bottom: 0;
+}
+.sub-menu li:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+.menu > li:hover .sub-menu li{
+    transform: scale(1);
+}
+.menu > li:hover .sub-menu{
+    transform: scale(1);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    cursor:pointer;
 }

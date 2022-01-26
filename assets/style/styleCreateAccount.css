@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header-container{
+    /* background-color: rgb(76, 205, 238); */
+    background-image: url('../img/backheader.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 100px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header-container h2{
+    font-family: 'Lobster', cursive;
+    font-size:36px;
+    color:white;
+}
+
+form {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+form p {
+    margin: 10px 0;
+}
+
+#notification_container {
+    position: fixed;
+    z-index: 300;
+    pointer-events: none;
+    top: 40px;
+    right: 25px;
+    width: 250px;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+#notification_container .content {
+    box-shadow: 0 1px 5px 0 #8d8d8db0;
+    background: rgb(150, 53, 53);
+    padding: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px;
+    color: white;
+}
+
+#notification_container .content_notif_correct {
+    box-shadow: 0 1px 5px 0 #8d8d8db0;
+    background: rgb(55, 134, 47);
+    padding: 8px;
+    border-radius: 4px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px;
+    color: white;
+}
+
+#notification_container .content p, .content2 p {
+    margin: auto;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
