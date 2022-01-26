@@ -1,7 +1,7 @@
 <?php
   require_once './connectMysql.php';
 
-  function insertData(){
+  function addAccountBank(){
     if(isset($_POST["submitForm"])){
 
       $nom_compte = $_POST['nom_compte'];
@@ -33,7 +33,7 @@
     return htmlspecialchars($text);
   }
 
-  insertData();
+  addAccountBank();
 
 ?>
 

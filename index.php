@@ -16,28 +16,42 @@
       </div>
     </header>
 
-    <form action="./vendor/insertData.php" method="POST">
-      <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
-
-      <p>Votre type de compte :
-        <select name="type_compte">
-          <option value="courant">Courant</option>
-          <option value="epargne">Épargne</option>
-          <option value="compte joint">Compte Joint</option>
+    <div>
+      <p>Choose an option :
+        <select name="choix_option">
+          <option id="addAccount">Add an account</option>
+          <option id="editAccount">Edit an account</option>
+          <option id="deleteAccount">Delete an account</option>
         </select>
       </p>
-
-      <p>Votre provision : <input type="number" name="provision_compte" /></p>
-
-      <p>Votre devise :
-        <select name="devise_compte">
-          <option value="EUR">€ EUR</option>
-          <option value="USD">$ USD</option>
-        </select>
-      </p>
-
-      <p><input action="./vendor/insertData.php" type="submit" name="submitForm" value="OK"></p>
-    </form>
+    </div>
+    
+    <!-- <div>
+      <ul>
+        <li>
+          <a>
+            Option :
+          </a>
+          <ul>
+            <li>
+              <a>
+                Add an account
+              </a>
+            </li>
+            <li>
+              <a>
+                Edit an account
+              </a>
+            </li>
+            <li>
+              <a>
+                Delete an account
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div> -->
 
   </body>
 </html>
