@@ -41,6 +41,6 @@
       <p><input type="submit" name="submitForm" value="OK"></p>
     </form>
 
-    <script src="./assets/js/addAccountBank.js"></script>
+    <script src="./assets/js/accountManagement.js"></script>
   </body>
 </html>

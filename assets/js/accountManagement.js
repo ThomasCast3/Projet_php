@@ -30,4 +30,13 @@ item.addEventListener( 'click', function() {
 
     body.classList.toggle( 'editPage' );
 })
+
+// Add a timer to supress our notifications after 3 seconds
+setTimeout(function () {
+    document.querySelector('#notification_container .content').remove();
+}, 3000);
+
+setTimeout(function () {
+    document.querySelector('#notification_container .content_notif_correct').remove();
+}, 3000);
     
