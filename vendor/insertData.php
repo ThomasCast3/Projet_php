@@ -9,7 +9,7 @@
       $type_compte = $_POST['type_compte'];
       $provision_compte = $_POST['provision_compte'];
       $devise_compte = $_POST['devise_compte'];
-
+     
      if($type_compte != "courant" && $type_compte != "epargne" && $type_compte != "compte joint"){
       //echo "error type de compte";
       header("Location: ../PHP.php?err=compte");
@@ -17,7 +17,7 @@
       //echo "error devise de compte";
       header("Location: ../PHP.php?err=devise");
      }else if(is_numeric($provision_compte)==false){
-      //echo "la provision n'est pas un nombre";
+
       header("Location: ../PHP.php?<SCRIPT>alert('error')</SCRIPT>");
       
      }else{
