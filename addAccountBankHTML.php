@@ -6,17 +6,19 @@
   <head>
     <meta charset="utf-8">
     <title>Little Accountant</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <?php include('./vendor/addAccountBank.php') ?>
   </head>
 
   <body>
+      
     <header>
       <div class="header-container">
-        <h2>Edit Bank Account</h2>
+        <h2 id="easterEgg">Create Bank Account</h2>
       </div>
     </header>
 
-    <form action="./vendor/addAccountPHP.php" method="POST">
+    <form method="POST">
       <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
 
       <p>Votre type de compte :
@@ -36,22 +38,9 @@
         </select>
       </p>
 
-      <p><input action="./vendor/addAccountPHP.php" type="submit" name="submitForm" value="OK"></p>
+      <p><input type="submit" name="submitForm" value="OK"></p>
     </form>
 
+    <script src="./assets/js/addAccountBank.js"></script>
   </body>
 </html>
-
-<script>
-      var selectCompte = document.getElementById( 'menuDeroulan' );
-
-      selectCompte.addEventListener('change',(event)=> {
-        let item      = event.target;
-        let data      = item.options[item.selectedIndex];
-        let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
-
-        console.log( fullData.Nom_Compte );
-        //let data = this.querySelector(':checked').getAttribute('data-full')
-        //alert( data );
-      });
-    </script>

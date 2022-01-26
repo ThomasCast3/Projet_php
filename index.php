@@ -1,16 +1,3 @@
-<?php
-require_once('./vendor/connectMysql.php');
-
-function ListCompte( $idUtilisateur ) {
-    $db = connectMysql();  //connection BDD
-    $req = $db->prepare('SELECT * FROM CompteBancaire WHERE IdUtilisateur = ?');  //prepare requete recuperer les compte d'un utilisateur
-    $req->execute( array( $idUtilisateur ) );  //executer la req 
-
-    return $req->fetchAll();  // retourner le resulta sous forme de tableau
-}
-
-?>
-
 <html> 
 
   <!doctype html>
@@ -19,7 +6,8 @@ function ListCompte( $idUtilisateur ) {
   <head>
     <meta charset="utf-8">
     <title>Little Accountant</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <?php include('./vendor/accountManagement.php') ?>
   </head>
 
   <body>
@@ -31,14 +19,12 @@ function ListCompte( $idUtilisateur ) {
 
     <p>Select a Bank Account :
       <select id="menuDeroulan" name="type_compte">
+        <option value="">-- Bank Account --</option>
           <?php foreach( ListCompte( 65 ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
-
               <option data-full='<?=json_encode($Compte); ?>' value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
-
           <?php endforeach; ?>  <!--  fin boucle for -->
       </select>
     </p>
-
 
     <nav>
       <ul class="menu">
@@ -46,7 +32,7 @@ function ListCompte( $idUtilisateur ) {
           OPTIONS
           <ul class="sub-menu">
             <li>
-              <a href="./vendor/addAccountBank.php">
+              <a href="./addAccountBankHTML.php">
                 ADD
               </a>
             </li>
@@ -89,57 +75,7 @@ function ListCompte( $idUtilisateur ) {
       </form>
     </div>
   
-    
+    <script src="./assets/js/accountManagement.js"></script>
+
   </body>
 </html>
-
-<script>
-  document.getElementById("easterEgg").addEventListener('click', function(event) {
-      window.open('./easterEgg/easterEgg.html');
-  })
-
-  var selectCompte = document.getElementById( 'menuDeroulan' );
-
-  selectCompte.addEventListener('change',(event)=> {
-    let item      = event.target;
-    let data      = item.options[item.selectedIndex];
-    let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
-
-    // Pre fill all inputs
-    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select' );
-    
-    inputs.forEach( function( item, i ) {
-      if( item.getAttribute( 'type' ) != 'submit' ) {
-        let name = item.getAttribute( 'name' );
-
-        item.value = fullData[name];
-      }
-    });
-
-    // console.log(fullData.Nom_Compte);
-
-    //var monNomCompte = fullData.Nom_Compte;
-    //document.getElementById('NomDeCompte').setAttribute('value',monNomCompte);
-
-    // var typeCompte = fullData.Type_Compte;
-    // document.getElementById('').setAttribute('value',typeCompte);
-
-    // var maProvision = fullData.Provision_Compte;
-    // document.getElementById('ProvisionDeCompte').setAttribute('value',maProvision);
-
-    // document.getElementById( 'type_compte' ).value = fullData.Type_Compte;
-
-    // var deviseCompte = fullData.Devise_Compte;
-    // document.getElementById('').setAttribute('value',deviseCompte);
-
-  });
-
-  let item = document.getElementById( 'editBtn' );
-
-  item.addEventListener( 'click', function() {
-      let body = document.getElementsByTagName( 'body' )[0];
-
-      body.classList.toggle( 'editPage' );
-  })
-      
-</script>
