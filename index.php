@@ -65,7 +65,7 @@ function ListCompte( $idUtilisateur ) {
 
     <div id="editInfoCompte">
       <form method="POST">
-        <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
+        <p>Votre nom de compte : <input type="text" name="nom_compte" id="NomDeCompte"/></p>
 
         <p>Votre type de compte :
           <select name="type_compte">
@@ -75,7 +75,7 @@ function ListCompte( $idUtilisateur ) {
           </select>
         </p>
 
-        <p>Votre provision : <input type="number" name="provision_compte" /></p>
+        <p>Votre provision : <input type="number" name="provision_compte" id="ProvisionDeCompte"/></p>
 
         <p>Votre devise :
           <select name="devise_compte">
@@ -106,7 +106,10 @@ function ListCompte( $idUtilisateur ) {
     let data      = item.options[item.selectedIndex];
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
-    console.log( fullData.Nom_Compte );
+    var monNomCompte = fullData.Nom_Compte;
+    document.getElementById('NomDeCompte').setAttribute('value',monNomCompte);
+    var maProvision = fullData.Provision_Compte;
+    document.getElementById('ProvisionDeCompte').setAttribute('value',maProvision);
   });
 
   let item = document.getElementById( 'editBtn' );
