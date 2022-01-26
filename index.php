@@ -1,3 +1,16 @@
+<?php
+require_once('./vendor/connectMysql.php');
+
+function ListCompte( $idUtilisateur ) {
+    $db = connectMysql();  //connection BDD
+    $req = $db->prepare('SELECT * FROM CompteBancaire WHERE IdUtilisateur = ?');  //prepare requete recuperer les compte d'un utilisateur
+    $req->execute( array( $idUtilisateur ) );  //executer la req 
+
+    return $req->fetchAll();  // retourner le resulta sous forme de tableau
+}
+
+?>
+
 <html> 
 
   <!doctype html>
@@ -16,38 +29,16 @@
       </div>
     </header>
 
-    <!-- <div>
-      <p>Choose an option :
-        <select name="choix_option">
-          <option id="addAccount">Add an account</option>
-          <option id="editAccount">Edit an account</option>
-          <option id="deleteAccount">Delete an account</option>
-        </select>
-      </p>
-    </div> -->
-    
+    <p>Select a Bank Account :
+      <select id="menuDeroulan" name="type_compte">
+          <?php foreach( ListCompte( 3 ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
 
-    <!-- <div>
-      <ul>
-        <li>
-          <a>
-            Option :
-          </a>
-          <ul>
-            <li>
-              <a>
-                Add an account
-              </a>
-            </li>
-            <li>
-              <a>
-                Edit the account
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div> -->
+              <option value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
+
+          <?php endforeach; ?>  <!--  fin boucle for -->
+      </select>
+    </p>
+
 
     <nav>
       <ul class="menu">
