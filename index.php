@@ -13,7 +13,7 @@
   <body>
     <header>
       <div class="header-container">
-        <h2 id="easterEgg">Create Bank Account</h2>
+        <h2 id="easterEgg">Bank Account Management</h2>
       </div>
     </header>
 
