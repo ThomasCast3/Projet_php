@@ -1,6 +1,6 @@
 <?php
-require_once('./vendor/connectMysql.php');
-require_once('./vendor/addAccountBank.php');
+require_once('connectMysql.php');
+include_once('addAccountBank.php');
 
 
 function ListCompte( $idUtilisateur ) {
