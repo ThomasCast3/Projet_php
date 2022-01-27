@@ -136,7 +136,7 @@
           <option value="">-- Operation --</option>
             <?php 
                 $idCompte = $Compte['IdCompte']; // reste bloqué à 144
-                foreach( ListOperation( $idCompte) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
+                foreach( ListOperation( 145 ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
                 <option data-full='<?=json_encode($Operation); ?>' value="<?= $Operation['IdOperation']; ?>"><?= $Operation['NomOperation']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
             <?php endforeach; ?>  <!--  fin boucle for -->
         </select>
