@@ -30,21 +30,25 @@ selectCompte.addEventListener('change',(event)=> {
 *********************************************************************************************************
 */
 
-let item = document.getElementById( 'editBtn' );
-
-item.addEventListener( 'click', function() {
+let editCount = document.getElementById( 'editBtn' );
+editCount.addEventListener( 'click', function() {
     let body = document.getElementsByTagName( 'body' )[0];
 
     body.classList.toggle( 'editPage' );
 })
 
-let item2 = document.getElementById( 'editOperationBtn' );
-
-item2.addEventListener( 'click', function() {
+let editOperation = document.getElementById( 'editOperationBtn' );
+editOperation.addEventListener( 'click', function() {
     let body = document.getElementsByTagName( 'body' )[0];
 
     body.classList.toggle( 'editOperationPage' );
-    console.log('test ptn')
+})
+
+let addOperation = document.getElementById( 'addOperationBtn' );
+addOperation.addEventListener( 'click', function() {
+    let body = document.getElementsByTagName( 'body' )[0];
+
+    body.classList.toggle( 'addOperationPage' );
 })
 
 /*

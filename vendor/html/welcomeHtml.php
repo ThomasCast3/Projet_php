@@ -8,7 +8,9 @@
     <title>Little Accountant</title>
     <link rel="stylesheet" href="../../assets//style/style.css">
     <?php include('../../vendor/accountManagement.php') ?>
-    <?php include('../../vendor/php/operation.php') ?>
+    <?php include('../../vendor/php/addOperation.php') ?>
+    <?php include('../../vendor/php/operationManagement.php') ?>
+
 
   </head>
 
@@ -29,6 +31,8 @@
           <?php endforeach; ?>  <!--  fin boucle for -->
       </select>
     </p>
+
+    <button id="addOperationBtn" > Create an operation </button>
 
     <nav>
       <ul class="menu">
@@ -81,15 +85,12 @@
         <p><input type="submit" name="submitFormEdit" value="OK"></p>
       </form>
     </div>
-    <a href="../php/logout.php">Logout</a>
 
     <!-- *************   OPERATION   ************* -->
 
-    <div>
+    <div id="addOperationForm" >
 
-      
-
-      <form method="POST" action="../php/addOperation.php" id="addOperation">
+      <form method="POST" id="addOperation">
           <input type="hidden" name="IdCompte" />
 
         <p>Operation's name : <input type="text" name="NomOperation" /></p>
@@ -118,12 +119,23 @@
 
       </form>
 
-      <button id="editOperationBtn"> EDIT </button>
+      <p>Select an Operation :
+    <select id="menuDeroulan" name="type_compte">
+        <option value="">-- Operation --</option>
+          <?php 
+              $idCompte = $Compte['IdCompte'];
+              foreach( ListCompte( $idCompte ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
+              <option data-full='<?=json_encode($Operation); ?>' value="<?= $Operation['IdOperation']; ?>"><?= $Operation['NomOperation']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
+          <?php endforeach; ?>  <!--  fin boucle for -->
+      </select>
+    </p>
+
+    <button id="editOperationBtn"> EDIT </button>
       
     </div>
 
       
-      
+    
 
     <div id="editInfoOperation">
       <form method="POST" >
@@ -158,6 +170,8 @@
         <input type="submit" value="DELETE" />
       </form>
     </div>
+
+    <a href="../php/logout.php">Logout</a>
 
     <script src="../../assets/js/accountManagement.js"></script>
 

@@ -130,7 +130,6 @@ a:hover {
 #editInfoCompte {
     display: none;
 }
-
 body.editPage #editInfoCompte {
     display: block;
 }
@@ -138,11 +137,16 @@ body.editPage #editInfoCompte {
 #editInfoOperation {
     display: none;
 }
-
 body.editOperationPage #editInfoOperation {
     display: block;
 }
 
+#addOperationForm {
+    display: none;
+}
+body.addOperationPage #addOperationForm {
+    display: block;
+}
 /* Create account */
 
 form {
