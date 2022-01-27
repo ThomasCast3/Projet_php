@@ -1,5 +1,6 @@
 <?php
-require_once('./connectMysql.php');
+session_start();
+require_once('connectMysql.php');
 
   if(isset($_POST["submitForm"])){
 
@@ -10,7 +11,9 @@ require_once('./connectMysql.php');
 
     $db = connectMysql();
 
-    $count = $db->query('SELECT COUNT(*) FROM CompteBancaire WHERE IdUtilisateur = 65 ')->fetchColumn();
+    $idUser = $_SESSION['user_login'];
+
+    $count = $db->query("SELECT COUNT(*) FROM CompteBancaire WHERE IdUtilisateur = $idUser ")->fetchColumn();
 
     if($type_compte != "courant" && $type_compte != "epargne" && $type_compte != "compte joint"){
       notifE("You have to put a correct count's type");
@@ -34,8 +37,9 @@ require_once('./connectMysql.php');
       }else{
         if ($count < 11) {
           $req = $db->prepare('INSERT INTO CompteBancaire ( IdUtilisateur, Nom_Compte, Type_Compte, Provision_Compte, Devise_Compte) VALUES ( :idU, :NC, :TC, :PC, :DC) ');
-          $req->execute( array( 'idU' => 65, 'NC' => $nom_compte, 'TC' => $type_compte, 'PC' => $provision_compte, 'DC' => $devise_compte ) );
+          $req->execute( array( 'idU' => $idUser, 'NC' => $nom_compte, 'TC' => $type_compte, 'PC' => $provision_compte, 'DC' => $devise_compte ) );
           notifC("You have successfully created an account");
+          header("refresh:3; ../../vendor/html/welcomeHtml.php");			//refresh 2 second after redirect to "welcome.php" page
         }else {
           echo "<script>
                   alert(\"Nombre de compte dépassé\");
