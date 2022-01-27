@@ -11,7 +11,7 @@ selectCompte.addEventListener('change',(event)=> {
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
     // Pre fill all inputs
-    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #editInfoOperation input, #editInfoOperation select' );
+    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #editInfoOperation input, #editInfoOperation select, #addOperation input' );
 
     inputs.forEach( function( item, i ) {
         if( item.getAttribute( 'type' ) != 'submit' ) {
