@@ -4,7 +4,7 @@
    <meta charset="utf-8">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
-   <link rel="stylesheet" href="../../assets/style/styleLogin.css"
+   <link rel="stylesheet" href="../../assets/style/style.css"
 
 </head>
 
