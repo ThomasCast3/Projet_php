@@ -17,16 +17,6 @@
       </div>
     </header>
 
-    <!-- <p>Select a Bank Account :
-      <select id="menuDeroulan" name="type_compte">
-        <option value="">-- Bank Account --</option>
-          <?php 
-              $idUser = $_SESSION['user_login'];
-              foreach( ListCompte( $idUser ) as $Compte ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
-              <option data-full='<?=json_encode($Compte); ?>' value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
-          <?php endforeach; ?>  <!--  fin boucle for -->
-      </select>
-    </p> -->
 <!-- 
     <nav>
       <ul class="menu">
