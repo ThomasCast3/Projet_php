@@ -6,20 +6,20 @@ document.getElementById("easterEgg").addEventListener('click', function(event) {
 var selectCompte = document.getElementById( 'menuDeroulan' );
 
 selectCompte.addEventListener('change',(event)=> {
-let item      = event.target;
-let data      = item.options[item.selectedIndex];
-let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
+    let item      = event.target;
+    let data      = item.options[item.selectedIndex];
+    let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
-// Pre fill all inputs
-let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input' );
+    // Pre fill all inputs
+    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #addOperation input' );
 
-inputs.forEach( function( item, i ) {
-    if( item.getAttribute( 'type' ) != 'submit' ) {
-    let name = item.getAttribute( 'name' );
+    inputs.forEach( function( item, i ) {
+        if( item.getAttribute( 'type' ) != 'submit' ) {
+        let name = item.getAttribute( 'name' );
 
-    item.value = fullData[name];
-    }
-});
+        item.value = fullData[name];
+        }
+    });
 
 });
 
