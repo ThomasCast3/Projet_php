@@ -17,7 +17,7 @@
       </div>
     </header>
 
-    <p>Select a Bank Account :
+    <!-- <p>Select a Bank Account :
       <select id="menuDeroulan" name="type_compte">
         <option value="">-- Bank Account --</option>
           <?php 
@@ -26,8 +26,8 @@
               <option data-full='<?=json_encode($Compte); ?>' value="<?= $Compte['IdCompte']; ?>"><?= $Compte['Nom_Compte']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
           <?php endforeach; ?>  <!--  fin boucle for -->
       </select>
-    </p>
-
+    </p> -->
+<!-- 
     <nav>
       <ul class="menu">
         <li>
@@ -82,7 +82,7 @@
 
         <p><input type="submit" name="submitFormEdit" value="OK"></p>
       </form>
-    </div>
+    </div> -->
     <a href="./vendor/php/logout.php">Connect to access your accounts</a>
 
     <script src="../../assets/js/accountManagement.js"></script>
