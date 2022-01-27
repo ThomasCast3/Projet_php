@@ -44,10 +44,6 @@
                 EDIT
             </li>
             <li>
-              <!-- <a href="./vendor/deleteAccountBank.php" name="submitDelete">
-                <input type="hidden" name="IdCompte"/>
-                DELETE
-              </a> -->
               <form id="deleteAccountForm" method="POST" action="../../vendor/deleteAccountBank.php">
                 <input type="hidden" name="IdCompte" />
                 <input type="submit" value="DELETE" />
@@ -87,7 +83,12 @@
     </div>
     <a href="../php/logout.php">Logout</a>
 
+    <!-- *************   OPERATION   ************* -->
+
     <div>
+
+      
+
       <form method="POST" action="../php/addOperation.php" id="addOperation">
           <input type="hidden" name="IdCompte" />
 
@@ -113,11 +114,49 @@
         <p>Operation's date : <input type="date" name="DateOperation" /> </p>
 
         <p><input type="submit" name="submitFormOperation" value="OK"></p>
+
+
       </form>
+
+      <button id="editOperationBtn"> EDIT </button>
+      
+    </div>
+
+      
+      
+
+    <div id="editInfoOperation">
+      <form method="POST" >
+        <input type="hidden" name="IdCompte"/>
+
+        <p>Operation's name : <input type="text" name="NomOperation" /></p>
+
+        <p>Type of operation :
+          <select name="IdCategorie">
+            <option value="1">Alimentaire</option>
+            <option value="2">Vestimentaire</option>
+            <option value="3">Loisir</option>
+            <option value="4">Transport</option>
+            <option value="5">Logement</option>
+            <option value="6">Autre</option>
+            <option value="7">Virement</option>
+            <option value="8">Depot</option>
+            <option value="9">Salaire</option>
+            <option value="10">Autre</option>
+          </select>
+        </p>
+
+        <p>transaction amount : <input type="number" name="MontantOperation" /> </p>
+
+        <p>Operation's date : <input type="date" name="DateOperation" /> </p>
+
+        <p><input type="submit" name="submitFormOperation" value="OK"></p>
+      </form>
+
       <form id="deleteAccountForm" method="POST" action="../../vendor/deleteAccountBank.php">
-                <input type="hidden" name="IdCompte" />
-                <input type="submit" value="DELETE" />
-              </form>
+        <input type="hidden" name="IdCompte" />
+        <input type="submit" value="DELETE" />
+      </form>
     </div>
 
     <script src="../../assets/js/accountManagement.js"></script>

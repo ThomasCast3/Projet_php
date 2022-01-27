@@ -11,17 +11,24 @@ selectCompte.addEventListener('change',(event)=> {
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
     // Pre fill all inputs
-    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #addOperation input' );
+    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #editInfoOperation input, #editInfoOperation select' );
 
     inputs.forEach( function( item, i ) {
         if( item.getAttribute( 'type' ) != 'submit' ) {
-        let name = item.getAttribute( 'name' );
+            let name = item.getAttribute( 'name' );
 
-        item.value = fullData[name];
+            item.value = fullData[name];
         }
     });
 
 });
+
+
+/*
+*********************************************************************************************************
+--------------------------------------------   EDIT BUTTON   --------------------------------------------
+*********************************************************************************************************
+*/
 
 let item = document.getElementById( 'editBtn' );
 
@@ -30,6 +37,21 @@ item.addEventListener( 'click', function() {
 
     body.classList.toggle( 'editPage' );
 })
+
+let item2 = document.getElementById( 'editOperationBtn' );
+
+item2.addEventListener( 'click', function() {
+    let body = document.getElementsByTagName( 'body' )[0];
+
+    body.classList.toggle( 'editOperationPage' );
+    console.log('test ptn')
+})
+
+/*
+*********************************************************************************************************
+-------------------------------------------   TIMEOUT TIMER   -------------------------------------------
+*********************************************************************************************************
+*/
 
 // Add a timer to supress our notifications after 3 seconds
 setTimeout(function () {

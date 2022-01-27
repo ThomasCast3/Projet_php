@@ -53,7 +53,7 @@ include_once('../addAccountBank.php');
 
         $req->execute( array( 'idCom' => $idCompte, 'idCat' => $idCategory, 'NOP' => $NomOperation, 'MO' => $MontantOperation, 'DO' => $DateOperation ) );
 
-        // $req->debugDumpParams();
+        // // $req->debugDumpParams();
 
         //   notifC("You have successfully created an account");
         //   header("refresh:3; ../../vendor/html/welcomeHtml.php");			//refresh 2 second after redirect to "welcome.php" page

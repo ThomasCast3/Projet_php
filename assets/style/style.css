@@ -125,6 +125,8 @@ a:hover {
     font-size: 20px;
 }
 
+
+
 #editInfoCompte {
     display: none;
 }
@@ -133,7 +135,13 @@ body.editPage #editInfoCompte {
     display: block;
 }
 
+#editInfoOperation {
+    display: none;
+}
 
+body.editOperationPage #editInfoOperation {
+    display: block;
+}
 
 /* Create account */
 
