@@ -10,7 +10,7 @@
     <?php include('../../vendor/accountManagement.php') ?>
     <?php include('../../vendor/php/addOperation.php') ?>
     <?php include('../../vendor/php/operationManagement.php') ?>
-
+    <?php include('../../vendor/php/deleteOperation.php') ?>
 
   </head>
 
@@ -33,6 +33,8 @@
     </p>
 
     <button id="addOperationBtn" > Create an operation </button>
+
+    <button id="editOperationBtn"> Edit an Operation </button>
 
     <nav>
       <ul class="menu">
@@ -58,6 +60,8 @@
       </ul>
     </nav>
 
+    <!-- ****************   EDIT BANK ACCOUNT   **************** -->
+
     <div id="editInfoCompte">
       <form method="POST" >
         <input type="hidden" name="IdCompte"/>
@@ -82,11 +86,13 @@
           </select>
         </p>
 
-        <p><input type="submit" name="submitFormEdit" value="OK"></p>
+        <p><input type="submit" name="submitFormEdit" value="EDIT"></p>
       </form>
     </div>
 
-    <!-- *************   OPERATION   ************* -->
+    <!-- ******************************************************************************
+    -----------------------------------   OPERATION   ---------------------------------
+    ******************************************************************************* -->
 
     <div id="addOperationForm" >
 
@@ -116,30 +122,25 @@
 
         <p><input type="submit" name="submitFormOperation" value="OK"></p>
 
-
       </form>
-
-      <p>Select an Operation :
-    <select id="menuDeroulan" name="type_compte">
-        <option value="">-- Operation --</option>
-          <?php 
-              $idCompte = $Compte['IdCompte'];
-              foreach( ListCompte( $idCompte ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
-              <option data-full='<?=json_encode($Operation); ?>' value="<?= $Operation['IdOperation']; ?>"><?= $Operation['NomOperation']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
-          <?php endforeach; ?>  <!--  fin boucle for -->
-      </select>
-    </p>
-
-    <button id="editOperationBtn"> EDIT </button>
-      
     </div>
 
-      
+    <!-- ****************   EDIT OPERATION   **************** -->
     
-
     <div id="editInfoOperation">
       <form method="POST" >
         <input type="hidden" name="IdCompte"/>
+
+        <p>Select an Operation :
+        <select id="menuDeroulant" name="type_operation">
+          <option value="">-- Operation --</option>
+            <?php 
+                $idCompte = $Compte['IdCompte']; // reste bloqué à 144
+                foreach( ListOperation( $idCompte) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
+                <option data-full='<?=json_encode($Operation); ?>' value="<?= $Operation['IdOperation']; ?>"><?= $Operation['NomOperation']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
+            <?php endforeach; ?>  <!--  fin boucle for -->
+        </select>
+      </p>
 
         <p>Operation's name : <input type="text" name="NomOperation" /></p>
 
@@ -162,13 +163,16 @@
 
         <p>Operation's date : <input type="date" name="DateOperation" /> </p>
 
-        <p><input type="submit" name="submitFormOperation" value="OK"></p>
+        <p><input type="submit" name="submitOperationEdit" value="EDIT"></p>
+
+        <input id="deleteAccountForm" type="submit" name="deleteOp" value="DELETE" />
+
       </form>
 
-      <form id="deleteAccountForm" method="POST" action="../../vendor/deleteAccountBank.php">
+      <!-- <form id="deleteAccountForm" method="POST" >
         <input type="hidden" name="IdCompte" />
-        <input type="submit" value="DELETE" />
-      </form>
+        <input type="submit" name="deleteOp" value="DELETE" />
+      </form> -->
     </div>
 
     <a href="../php/logout.php">Logout</a>

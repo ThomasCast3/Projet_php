@@ -11,13 +11,33 @@ selectCompte.addEventListener('change',(event)=> {
     let fullData  = JSON.parse( data.getAttribute( 'data-full' ) );
 
     // Pre fill all inputs
-    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #editInfoOperation input, #editInfoOperation select, #addOperation input' );
+    let inputs    = document.querySelectorAll( '#editInfoCompte input, #editInfoCompte select, #deleteAccountForm input, #addOperation input' );
 
     inputs.forEach( function( item, i ) {
         if( item.getAttribute( 'type' ) != 'submit' ) {
             let name = item.getAttribute( 'name' );
 
             item.value = fullData[name];
+        }
+    });
+
+});
+
+var selectCompte2 = document.getElementById( 'menuDeroulant' );
+
+selectCompte2.addEventListener('change',(event)=> {
+    let item2      = event.target;
+    let data2      = item2.options[item2.selectedIndex];
+    let fullData2  = JSON.parse( data2.getAttribute( 'data-full' ) );
+
+    // Pre fill all inputs
+    let inputs2    = document.querySelectorAll( '#editInfoOperation input, #editInfoOperation select');
+
+    inputs2.forEach( function( item2, i ) {
+        if( item2.getAttribute( 'type' ) != 'submit' ) {
+            let name2 = item2.getAttribute( 'name' );
+
+            item2.value = fullData2[name2];
         }
     });
 
