@@ -8,7 +8,7 @@
     <title>Little Accountant</title>
     <link rel="stylesheet" href="../../assets//style/style.css">
     <?php include('../../vendor/accountManagement.php') ?>
-    <?php include('../../vendor/php/addOperation.php') ?>
+    <?php include('../../vendor/php/operation.php') ?>
 
   </head>
 
@@ -94,17 +94,17 @@
         <p>Operation's name : <input type="text" name="NomOperation" /></p>
 
         <p>Type of operation :
-          <select name="name">
-            <option value="alimentaire">Alimentaire</option>
-            <option value="vestimentaire">Vestimentaire</option>
-            <option value="loisir">Loisir</option>
-            <option value="transport">Transport</option>
-            <option value="logement">Logement</option>
-            <option value="autre1">Autre</option>
-            <option value="virement">Virement</option>
-            <option value="depot">Depot</option>
-            <option value="salaire">Salaire</option>
-            <option value="autre2">Autre</option>
+          <select name="IdCategorie">
+            <option value="1">Alimentaire</option>
+            <option value="2">Vestimentaire</option>
+            <option value="3">Loisir</option>
+            <option value="4">Transport</option>
+            <option value="5">Logement</option>
+            <option value="6">Autre</option>
+            <option value="7">Virement</option>
+            <option value="8">Depot</option>
+            <option value="9">Salaire</option>
+            <option value="10">Autre</option>
           </select>
         </p>
 
@@ -114,6 +114,10 @@
 
         <p><input type="submit" name="submitFormOperation" value="OK"></p>
       </form>
+      <form id="deleteAccountForm" method="POST" action="../../vendor/deleteAccountBank.php">
+                <input type="hidden" name="IdCompte" />
+                <input type="submit" value="DELETE" />
+              </form>
     </div>
 
     <script src="../../assets/js/accountManagement.js"></script>
