@@ -14,6 +14,24 @@ require_once('../addAccountBank.php');
     $MontantOperation = $_POST['MontantOperation'];
     $DateOperation = $_POST['DateOperation'];
 
+    if ($idCategory > 0 && $idCategory < 7) {
+
+        //provision = provision - montant
+        $debit = $db->prepare('UPDATE CompteBancaire
+        SET  Provision_Compte = Provision_Compte - :MontantOperation
+        WHERE IdCompte = :IdCompte ');
+        $debit->execute( array('MontantOperation' => $MontantOperation, 'IdCompte' => $idCompte));
+    
+    }elseif ($idCategory > 6 && $idCategory < 11) {
+        
+        //provision = provision + montant
+        $credit = $db->prepare('UPDATE CompteBancaire
+        SET  Provision_Compte = Provision_Compte + :MontantOperation
+        WHERE IdCompte = :IdCompte ');
+        $credit->execute( array('MontantOperation' => $MontantOperation, 'IdCompte' => $idCompte));
+
+    }
+
     // if($name != "alimentaire" && $name != "vestimentaire" && $name != "loisir" && $name != "transport" && $name != "logement" && $name != "autre1" && $name != "virement" && $name != "depot" && $name != "salaire" && $name != "autre2"){
     //     notifE("You have to put a correct operation's type");
 
