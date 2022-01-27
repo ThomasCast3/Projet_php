@@ -1,36 +1,28 @@
 <?php
-require_once('./connectMysql.php');
-require_once('./addAccountBank.php');
+    require_once('./connectMysql.php');
+    require_once('./addAccountBank.php');
 
 
-// session_start();
-$db = connectMysql();
+    $db = connectMysql();
 
-echo $_POST['IdCompte'];
+    echo $_POST['IdCompte'];
 
-// if(!isset($_SESSION['user_login']))	//check unauthorize user not access in "welcome.php" page
-// {
-//     header("location: ../index.php");
-// }
+    $idCompte = $_POST['IdCompte'];
 
-// $id = $_SESSION['user_login'];
-
+    // $sqlAccount = 'DELETE FROM CompteBancaire WHERE IdCompte = :idC';
+    // prepare the statement for execution
+    $statement = $db->prepare('DELETE FROM CompteBancaire WHERE IdCompte = :idC');
+    $statement->execute(array('idC'=> $idCompte));
 
 
-$idCompte = $_POST['IdCompte'];
-
-
-// $sqlAccount = 'DELETE FROM CompteBancaire WHERE IdCompte = :idC';
-// prepare the statement for execution
-$statement = $db->prepare('DELETE FROM CompteBancaire WHERE IdCompte = :idC');
-$statement->execute(array('idC'=> $idCompte));
-
-// execute the statement
-if ($statement->execute()) {
-    // echo 'publisher id ' . $idCompte . ' was deleted successfully.';
-    notifE('delete success');
-}
-
-//session_destroy();
+    // execute the statement
+    if($statement->execute()){
+        notifC('Account deleted...');
+        header("refresh:2; ../vendor/html/welcomeHtml.php");
+    }
 ?>
 
+<html>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <script src="../assets/js/accountManagement.js"></script>
+</html>
