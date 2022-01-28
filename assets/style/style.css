@@ -135,10 +135,10 @@ body.editPage #editInfoCompte {
 }
 
 #editInfoOperation {
-    display: none;
+    display: block;
 }
 body.editOperationPage #editInfoOperation {
-    display: block;
+    display: none;
 }
 
 #addOperationForm {

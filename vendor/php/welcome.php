@@ -10,6 +10,7 @@ include_once "../html/welcomeHtml.php";
         header("location: login.php");
     }
 
+
     $id = $_SESSION['user_login'];
 
     $select_stmt = $db->prepare("SELECT * FROM Utilisateurs WHERE IdUtilisateur=:IdUtilisateur");
