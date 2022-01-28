@@ -152,6 +152,8 @@ setTimeout(function () {
 let img    = document.querySelector("body");
 let word = '';
 document.addEventListener( 'keypress', function( event ) {
+    document.querySelector("body").style.background = "";
+
     let currentLetter = event.key;
 
     word += currentLetter;
@@ -167,6 +169,80 @@ document.addEventListener( 'keypress', function( event ) {
 function displayLama() {
     console.log(word);
     word = '';
-    document.querySelector("body").style.background = "url(../../assets/easterEgg/lama.jpeg) fixed center/cover";
+    let aleat = Math.random();
+    if (aleat >= 0 && aleat <= 0.2) {
+        document.querySelector("body").style.background = "url(../../assets/easterEgg/lama.jpeg) fixed center/cover";
+    }else if (aleat > 0.2 && aleat <= 0.4) {
+        document.querySelector("body").style.background = "url(../../assets/easterEgg/lama2.jpeg) fixed center/cover";
+    }else if (aleat > 0.4 && aleat <= 0.6) {
+        document.querySelector("body").style.background = "url(../../assets/easterEgg/lama3.jpeg) fixed center/cover";
+    }else if (aleat > 0.6 && aleat <= 0.8) {
+        document.querySelector("body").style.background = "url(../../assets/easterEgg/lama4.jpeg) fixed center/cover";
+    }else if (aleat > 0.8 && aleat < 1) {
+        document.querySelector("body").style.background = "url(../../assets/easterEgg/lama5.jpeg) fixed center/cover";
+    }
 
 }
+
+
+// let mouv    = document.querySelector("#test");
+let wordMouv = '';
+document.addEventListener( 'keypress', function( event ) {
+    // document.querySelector("body").style.background = "";
+
+    let currentLetterMouv = event.key;
+
+    wordMouv += currentLetterMouv;
+
+    if( wordMouv.length > 2 ) {
+        if( wordMouv.includes( 'lol' ) ) {
+            MouvItem();
+        } 
+    }
+});
+
+function MouvItem() {
+    wordMouv = '';
+
+    let items = document.querySelectorAll(".egm");
+
+    items.forEach( function( item, i ) {
+        setItemPos( item );
+
+        setInterval(function() {
+            setItemPos( item );
+        }, 100 );
+    });
+}
+
+function randomMinMax( min, max ) {
+    return Math.floor( Math.random() * ( max - min + 1 ) + min );
+}
+
+function setItemPos( item ) {
+    let width   = window.innerWidth;
+    let height  = window.innerHeight;
+
+    let top     = randomMinMax( 0, height );
+    let left    = randomMinMax( 0, width );
+
+    item.style.top  = '' + top + 'px';
+    item.style.left = '' + left + 'px';
+    item.style.position = 'absolute';
+}
+
+
+// $('#test').click(function() {
+//     var docHeight = $(document).height(),
+//         docWidth = $(document).width(),
+//         $div = $('#test'),
+//         divWidth = $div.width(),
+//         divHeight = $div.height(),
+//         heightMax = docHeight - divHeight,
+//         widthMax = docWidth - divWidth;
+
+//     $div.css({
+//         left: Math.floor( Math.random() * widthMax ),
+//         top: Math.floor( Math.random() * heightMax )
+//     });
+// });

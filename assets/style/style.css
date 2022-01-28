@@ -193,3 +193,13 @@ body.egg .img {
     height: 0px;
     visibility: hidden; 
 }
+
+body {
+    background: url(./lama.jpeg) fixed center/cover;
+}
+
+.egm {
+    top: 0;
+    left: 0;
+    transition: all 1s ease;
+}

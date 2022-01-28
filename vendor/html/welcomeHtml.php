@@ -16,14 +16,14 @@
   </head>
 
   <body>
-    <header>
+    <header class="egm">
       <div class="header-container">
         <h2 id="easterEggTitle">Bank Account Management</h2>
       </div>
     </header>
 
-    <p>Select a Bank Account :
-      <select id="menuDeroulan" name="type_compte">
+    <p  class="egm">Select a Bank Account :
+      <select id="menuDeroulan" name="type_compte" >
         <option value="">-- Bank Account --</option>
           <?php 
               $idUser = $_SESSION['user_login'];
@@ -33,17 +33,17 @@
       </select>
     </p>
 
-    <button id="addOperationBtn" > Create an operation </button>
+    <button id="addOperationBtn" class="egm"> Create an operation </button>
 
     
-    <div>
+    <div  class="egm">
     <form  method="POST">
     <input type="hidden" name="IdCompte" id="champcacher" value=""/>
     <button  id="editOperationBtn" name="submitEditOp">EDIT</button>
     </form>
   </div>
 
-    <nav>
+    <nav  class="egm">
       <ul class="menu">
         <li>
           OPTIONS
@@ -138,7 +138,7 @@
       <form method="POST" >
         <input type="hidden" name="IdOperation" id="champcacherOperation"/>
 
-      <p>Select an Operation :
+      <p  class="egm">Select an Operation :
         <select id="menuDeroulant" name="type_operation">
           <option value="">-- Operation --</option>
             <?php 
@@ -149,9 +149,9 @@
         </select>
       </p>
 
-        <p>Operation's name : <input type="text" name="NomOperation" /></p>
+        <p  class="egm">Operation's name : <input type="text" name="NomOperation" /></p>
 
-        <p>Type of operation :
+        <p  class="egm">Type of operation :
           <select name="IdCategorie">
             <option value="1">Alimentaire</option>
             <option value="2">Vestimentaire</option>
@@ -166,13 +166,13 @@
           </select>
         </p>
 
-        <p>transaction amount : <input type="number" name="MontantOperation" /> </p>
+        <p  class="egm">transaction amount : <input type="number" name="MontantOperation" /> </p>
 
-        <p>Operation's date : <input type="date" name="DateOperation" /> </p>
+        <p  class="egm">Operation's date : <input type="date" name="DateOperation" /> </p>
 
-        <p><input type="submit" name="submitOperationEdit" value="EDIT"></p>
+        <p  class="egm"><input type="submit" name="submitOperationEdit" value="EDIT"></p>
 
-        <input id="deleteAccountForm" type="submit" name="deleteOp" value="DELETE" />
+        <input  class="egm" id="deleteAccountForm" type="submit" name="deleteOp" value="DELETE" />
 
       </form>
 
@@ -190,7 +190,7 @@
 
     <img id="theImage" src="../../assets/easterEgg/lama.jpeg">
 
-    <a href="../php/logout.php">Logout</a>
+    <a href="../php/logout.php"  class="egm">Logout</a>
 
     <script src="../../assets/js/accountManagement.js"></script>
 
