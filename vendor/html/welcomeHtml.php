@@ -39,7 +39,7 @@
     <div>
     <form  method="POST">
     <input type="hidden" name="IdCompte" value=""/>
-    <button type="button"  id="editOperationBtn">EDIT</button>
+    <button id="editOperationBtn">EDIT</button>
     </form>
   </div>
 

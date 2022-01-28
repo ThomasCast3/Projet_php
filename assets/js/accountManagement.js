@@ -1,7 +1,8 @@
 
 document.getElementById("easterEgg").addEventListener('click', function(event) {
-    window.open('./easterEgg/easterEgg.html');
+    window.open('../../assets/easterEgg/easterEgg.html');
 })
+
 
 var selectCompte = document.getElementById( 'menuDeroulan' );
 

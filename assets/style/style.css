@@ -27,6 +27,8 @@ button {
     padding: 10px 15px;
 }
 
+/* Option menu */
+
 nav{
     text-align: center;
 }
@@ -125,7 +127,7 @@ a:hover {
     font-size: 20px;
 }
 
-
+/* JS Style to appear forms */
 
 #editInfoCompte {
     display: none;

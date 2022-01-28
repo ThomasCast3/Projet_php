@@ -11,7 +11,6 @@
   </head>
 
   <body>
-      
     <header>
       <div class="header-container">
         <h2 id="easterEgg">Create Bank Account</h2>
@@ -19,19 +18,19 @@
     </header>
 
     <form method="POST">
-      <p>Votre nom de compte : <input type="text" name="nom_compte" /></p>
+      <p>Acount's name : <input type="text" name="nom_compte" /></p>
 
-      <p>Votre type de compte :
+      <p>Account's type :
         <select name="type_compte">
-          <option value="courant">Courant</option>
-          <option value="epargne">Épargne</option>
-          <option value="compte joint">Compte Joint</option>
+          <option value="courant">Current</option>
+          <option value="epargne">Savings</option>
+          <option value="compte joint">joint account</option>
         </select>
       </p>
 
-      <p>Votre provision : <input type="number" name="provision_compte" /></p>
+      <p>Account's provision : <input type="number" name="provision_compte" /></p>
 
-      <p>Votre devise :
+      <p>Account's currency :
         <select name="devise_compte">
           <option value="EUR">€ EUR</option>
           <option value="USD">$ USD</option>
@@ -41,6 +40,6 @@
       <p><input type="submit" name="submitForm" value="OK"></p>
     </form>
 
-    <script src="./assets/js/accountManagement.js"></script>
+    <script src="./assets/js/addAccountBank.js"></script>
   </body>
 </html>

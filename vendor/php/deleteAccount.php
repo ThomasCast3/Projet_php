@@ -8,7 +8,7 @@ if(isset($_POST['deleteAc'])){
 
     $db = connectMysql();
 
-    echo $_POST['IdCompte'];
+    // echo $_POST['IdCompte'];
     $idCompte = $_POST['IdCompte'];
 
     $statement = $db->prepare('DELETE FROM Operation WHERE IdCompte = :idC');
