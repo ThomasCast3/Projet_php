@@ -60,7 +60,7 @@
             
             <div class="form-group">
                You don't have a account register here? 
-               <a href="../html/createUserHtml.php"><p class="text-info">Register Account</p></a>		
+               <a href="../php/createUser.php"><p class="text-info">Register Account</p></a>		
             </div>  
          </form>
 

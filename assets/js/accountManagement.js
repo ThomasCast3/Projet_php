@@ -22,6 +22,10 @@ selectCompte.addEventListener('change',(event)=> {
         }
     });
 
+    var champ  = document.getElementById('champcacher');
+
+    champ.setAttribute('value', fullData['IdCompte']);
+
 });
 
 var selectCompte2 = document.getElementById( 'menuDeroulant' );
@@ -42,6 +46,10 @@ selectCompte2.addEventListener('change',(event)=> {
         }
     });
 
+    var champ2  = document.getElementById('champcacherOperation');
+
+    champ2.setAttribute('value', fullData2['IdOperation']);
+
 });
 
 
@@ -58,12 +66,7 @@ editCount.addEventListener( 'click', function() {
     body.classList.toggle( 'editPage' );
 })
 
-let editOperation = document.getElementById( 'editOperationBtn' );
-editOperation.addEventListener( 'click', function() {
-    let body = document.getElementsByTagName( 'body' )[0];
 
-    body.classList.toggle( 'editOperationPage' );
-})
 
 let addOperation = document.getElementById( 'addOperationBtn' );
 addOperation.addEventListener( 'click', function() {

@@ -54,7 +54,7 @@ if(isset($_REQUEST['btn_register'])) //button name "btn_register"
 				if($insert_stmt->execute(array(':email'	=>$email, ':password'=>$new_password, ':username'=>$username))){
 					$_SESSION["user_login"] = $db->lastInsertId();	//session name is "user_login"
 					notifC('Register Successfully...');
-					header("refresh:2; ../vendor/html/welcomeHtml.php");
+					header("refresh:2; ../html/welcomeHtml.php");
         		}
 			}
 		}
