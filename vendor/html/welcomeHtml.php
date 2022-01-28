@@ -36,7 +36,7 @@
     <div>
     <form  method="POST">
     <input type="hidden" name="IdCompte" id="champcacher" value=""/>
-    <button type="button"  id="editOperationBtn" name="submitEditOp">EDIT</button>
+    <button   id="editOperationBtn" name="submitEditOp">EDIT</button>
     </form>
   </div>
    

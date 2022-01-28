@@ -138,7 +138,7 @@ body.editPage #editInfoCompte {
     display: block;
 }
 body.editOperationPage #editInfoOperation {
-    display: none;
+    display: block;
 }
 
 #addOperationForm {
