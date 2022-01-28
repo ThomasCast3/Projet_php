@@ -169,3 +169,27 @@ form button {
     padding: 5px 15px;
     margin-top: 10px;
 }
+
+/* Easter EGG  */
+
+/* .img {
+    width: 500px;
+    height: 500px;
+    display: none
+} */
+/* 
+#easterEgg {
+    display: none;
+}
+body.egg #easterEgg {
+    display: block;
+}
+body.egg .img {
+    display: block;
+} */
+
+#theImage { 
+    width: 0px;
+    height: 0px;
+    visibility: hidden; 
+}

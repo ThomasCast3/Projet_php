@@ -1,6 +1,15 @@
 
-document.getElementById("easterEgg").addEventListener('click', function(event) {
-    window.open('../../assets/easterEgg/easterEgg.html');
+// document.getElementById("easterEgg").addEventListener('click', function(event) {
+//     window.open('../../assets/easterEgg/easterEgg.html');
+// })
+
+let easter = document.getElementById( 'easterEggTitle' );
+easter.addEventListener( 'click', function() {
+    let body = document.getElementsByTagName( 'body' )[0];
+
+    console.log("test");
+
+    body.classList.toggle( 'egg' );
 })
 
 
@@ -89,4 +98,75 @@ setTimeout(function () {
 setTimeout(function () {
     document.querySelector('#notification_container .content_notif_correct').remove();
 }, 3000);
+
+//**********************************
     
+
+// let input  = document.querySelector(".text");
+// let result = document.querySelector(".result");
+// let img    = document.querySelector(".img");
+
+// let text_image={
+//   "lama" : "../../assets/easterEgg/lama.jpeg",
+// }
+
+// input.oninput= function(e) {
+//     let L =  this.value;   
+  
+//   for (let [key, value] of Object.entries(text_image)) {
+ 
+//     if(key == L){
+//         console.log(value)
+//         img.src=value
+//     }
+//   }
+// };
+
+//**********************************
+ 
+// let img    = document.querySelector(".img");
+// let word = '';
+// document.addEventListener( 'keypress', function( event ) {
+//     let currentLetter = event.key;
+
+//     word += currentLetter;
+
+//     if( word.length > 3 ) {
+//         if( word.includes( 'lama' ) ) {
+//             displayLama();
+//         } 
+//     }
+// });
+
+
+// function displayLama() {
+//     console.log(word);
+//     word = '';
+//     document.getElementById("theImage").style.visibility = "visible";
+//     document.getElementById("theImage").style.width = "500px";
+//     document.getElementById("theImage").style.height = "500px";
+// }
+
+
+
+let img    = document.querySelector("body");
+let word = '';
+document.addEventListener( 'keypress', function( event ) {
+    let currentLetter = event.key;
+
+    word += currentLetter;
+
+    if( word.length > 3 ) {
+        if( word.includes( 'lama' ) ) {
+            displayLama();
+        } 
+    }
+});
+
+
+function displayLama() {
+    console.log(word);
+    word = '';
+    document.querySelector("body").style.background = "url(../../assets/easterEgg/lama.jpeg) fixed center/cover";
+
+}

@@ -18,7 +18,7 @@
   <body>
     <header>
       <div class="header-container">
-        <h2 id="easterEgg">Bank Account Management</h2>
+        <h2 id="easterEggTitle">Bank Account Management</h2>
       </div>
     </header>
 
@@ -182,20 +182,13 @@
       </form> -->
     </div>
 
-    <!-- ****************   TABLEAU OPERATIONS   **************** -->
+    <!-- <div id="easterEgg" >
+      <input type="text" class="text" >
+      <div class="result"></div>
+      <img src="" alt="" class="img">
+    </div> -->
 
-    <br><br><br><br><br><br>
-    <div class="tableau">
-      <?php
-        foreach( ListOperation( 137 ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
-          <div data-full='<?=
-              json_encode($Operation)?>'
-              value="<?= $Operation['IdOperation'] ?>">
-              Nom d'operation : <?= $Operation['NomOperation']; ?> |
-              Montant d'operation : <?= $Operation['MontantOperation'];?> $ |   
-              Date d'operation : <?= $Operation['DateOperation']; ?></div>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
-        <?php endforeach; ?> 
-    </div>
+    <img id="theImage" src="../../assets/easterEgg/lama.jpeg">
 
     <a href="../php/logout.php">Logout</a>
 
