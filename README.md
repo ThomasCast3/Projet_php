@@ -50,7 +50,7 @@
         <img src="https://img.shields.io/badge/--FF7518?logo=html5&logoColor=ffffff">
     </a>
       <a>
-        <img src="https://img.shields.io/badge/--FF7518?logo=PHP&logoColor=ffffff">
+        <img src="https://img.shields.io/badge/--#7417a6?logo=PHP&logoColor=ffffff">
     </a>
 </div>
 
