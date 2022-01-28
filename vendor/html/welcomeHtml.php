@@ -35,7 +35,13 @@
 
     <button id="addOperationBtn" > Create an operation </button>
 
-    <button id="editOperationBtn"> Edit an Operation </button>
+    
+    <div>
+    <form  method="POST">
+    <input type="hidden" name="IdCompte" value=""/>
+    <button type="button"  id="editOperationBtn">EDIT</button>
+    </form>
+  </div>
 
     <nav>
       <ul class="menu">
