@@ -59,12 +59,12 @@
         <a>
         <img src="https://badgen.net/github/branches/ThomasCast3/Projet_php/">
     </a>
-    <a>
+    <!--<a>
         <img src="https://badgen.net/github/commits/ThomasCast3/Projet_php/">
     </a>
     <a>
         <img src="https://badgen.net/github/last-commit/ThomasCast3/Projet_php/">
-    <!-- </a>
+     </a>
         <a>
         <img src="https://badgen.net/github/clones/justRunnz/PROJET_JS_AVANCEE/MC-dev">
     </a> -->
