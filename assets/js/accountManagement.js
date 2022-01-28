@@ -20,7 +20,9 @@ selectCompte.addEventListener('change',(event)=> {
             item.value = fullData[name];
         }
     });
-
+    var champ  = document.getElementById('champcacher');
+    console.log(fullData['IdCompte']);
+    champ.setAttribute('value', fullData['IdCompte']);
 });
 
 var selectCompte2 = document.getElementById( 'menuDeroulant' );

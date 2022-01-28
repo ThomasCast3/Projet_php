@@ -12,7 +12,7 @@
     <?php include('../../vendor/php/operationManagement.php') ?>
     <?php include('../../vendor/php/deleteOperation.php') ?>
     <?php include('../../vendor/php/deleteAccount.php') ?>
-
+    <?php include('../../vendor/php/welcomePHP.php') ?>
   </head>
 
   <body>
@@ -38,8 +38,8 @@
     
     <div>
     <form  method="POST">
-    <input type="hidden" name="IdCompte" value=""/>
-    <button type="button"  id="editOperationBtn">EDIT</button>
+    <input type="hidden" name="IdCompte" id="champcacher" value=""/>
+    <button type="button"  id="editOperationBtn" name="submitEditOp">EDIT</button>
     </form>
   </div>
 
@@ -142,8 +142,8 @@
         <select id="menuDeroulant" name="type_operation">
           <option value="">-- Operation --</option>
             <?php 
-                $idCompte = $Compte['IdCompte']; // reste bloqué à 144
-                foreach( ListOperation( 150 ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
+              $idCompte = takeIdCompte(); // reste bloqué à 144
+                foreach( ListOperation( $idCompte ) as $Operation ): ?>   <!--creer une boucle for sur la fonction listCompte pour l'utilisateur 3 -->
                 <option data-full='<?=json_encode($Operation); ?>' value="<?= $Operation['IdOperation']; ?>"><?= $Operation['NomOperation']; ?></option>  <!-- creer un option dans select avec l'id du compte et afficher son nom -->
             <?php endforeach; ?>  <!--  fin boucle for -->
         </select>
